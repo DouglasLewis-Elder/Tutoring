@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block pageheading %}Accounts{% endblock %}
+
+{% block main %}
+
+    <div class="account">
+
+        {%  for accounts in account_list %}
+            <div class="account-box">
+                <p class="account-box-heading">{{ accounts[1] }}</p>
+                <p class="account-box-heading">{{ accounts[2] }}</p>
+                <p class="account-box-heading">{{ accounts[3] }}</p>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
