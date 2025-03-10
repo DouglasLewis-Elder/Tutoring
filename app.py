@@ -33,6 +33,13 @@ def render_accounts():
     connection.close()
     return render_template('accounts.html', account_list=account_list)
 
+@app.route('/signup', method=['POST','GET'])
+def render_signup():
+    return render_template('signup.html')
+
+@app.route('/login', method=['POST','GET'])
+def render_login():
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run()

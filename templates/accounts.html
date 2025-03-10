@@ -4,17 +4,25 @@
 
 {% block main %}
 
-    <div class="account">
+    <a href="/login"><button type="submit">Login</button></a>
+    <a href="/signup"><button type="submit">Signup</button></a>
 
+    <table>
+
+        <tr>
+            <td>First</td>
+            <td>Last</td>
+            <td>Type</td>
+        </tr>
         {%  for accounts in account_list %}
-            <div class="account-box">
-                <p class="account-box-heading">{{ accounts[1] }}</p>
-                <p class="account-box-heading">{{ accounts[2] }}</p>
-                <p class="account-box-heading">{{ accounts[3] }}</p>
-            </div>
+            <tr>
+                <td>{{ accounts[1] }}</td>
+                <td>{{ accounts[2] }}</td>
+                <td>{{ accounts[3] }}</td>
+            </tr>
 
         {% endfor %}
 
-    </div>
+    </table>
 
 {% endblock %}
