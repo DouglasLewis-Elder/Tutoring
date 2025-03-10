@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import sqlite3
 from sqlite3 import Error
 
@@ -33,11 +33,14 @@ def render_accounts():
     connection.close()
     return render_template('accounts.html', account_list=account_list)
 
-@app.route('/signup', method=['POST','GET'])
+@app.route('/signup', methods=['POST','GET'])
 def render_signup():
+    if request.method == 'POST':
+        first = request.form.get()
+
     return render_template('signup.html')
 
-@app.route('/login', method=['POST','GET'])
+@app.route('/login', methods=['POST','GET'])
 def render_login():
     return render_template('login.html')
 
