@@ -53,7 +53,7 @@ def render_signup():
         connection = connect_to_database(DATABASE)
         query_insert = "INSERT INTO accounts (first_name, last_name, type, email, pass) VALUES (?,?,?,?,?)"
         cur = connection.cursor()
-        cur.execute(query_insert, (first_n, last_n, email, tutor_type, pass1))
+        cur.execute(query_insert, (first_n, last_n, tutor_type, email, pass1))
         connection.commit()
         connection.close()
 
