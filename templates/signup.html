@@ -30,8 +30,16 @@
         </div>
 
         <div class="form-group">
+            <div class="form-label"> Are you a Tutor? </div>
+            <div class="form-element"><select name="tutor_check" required>
+                    <option value="0">Tutor</option>
+                    <option value="1">Tutee</option>
+                </select></div>
+        </div>
+
+        <div class="form-group">
             <div class="form-label"> Submit: </div>
-            <div class="form-element"> <input type="submit" value="Submit"> </div>
+            <div class="form-element"> <button type="submit">Submit</button> </div>
         </div>
     </form>
 {% endblock %}
