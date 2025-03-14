@@ -10,7 +10,7 @@
 
     <table>
 
-        <tr>
+        <tr style="border: 4px">
             <td>First</td>
             <td>Last</td>
             <td>Type</td>
@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ accounts[1] }}</td>
                 <td>{{ accounts[2] }}</td>
-                <td>{{ accounts[3] }}</td>
+                <td>{% if accounts[3] == 0 %} Tutor {% else %} Tutee {% endif %}</td>
             </tr>
 
         {% endfor %}
