@@ -9,21 +9,23 @@
     <a href="/signup"><button type="submit">Signup</button></a>
 
     <table>
-
-        <tr style="border: 4px">
-            <td>First</td>
-            <td>Last</td>
-            <td>Type</td>
-        </tr>
-        {%  for accounts in account_list %}
-            <tr>
-                <td>{{ accounts[1] }}</td>
-                <td>{{ accounts[2] }}</td>
-                <td>{% if accounts[3] == 0 %} Tutor {% else %} Tutee {% endif %}</td>
+        <thead>
+            <tr style="border: 4px">
+                <td>First</td>
+                <td>Last</td>
+                <td>Type</td>
             </tr>
+        </thead>
+        <tbody>
+            {%  for accounts in account_list %}
+                <tr>
+                    <td>{{ accounts[1] }}</td>
+                    <td>{{ accounts[2] }}</td>
+                    <td>{% if accounts[3] == 0 %} Tutor {% else %} Tutee {% endif %}</td>
+                </tr>
 
-        {% endfor %}
-
+            {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}

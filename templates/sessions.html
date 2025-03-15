@@ -1,6 +1,29 @@
 {% extends "base.html" %}
 
-{% block pageheading %}Sessions{% endblock %}
+{% block pageheading %}Session Creation{% endblock %}
 
 {% block main %}
+
+        <form class="myform" method="post">
+        <div class="form-group">
+            <div class="form-label"> Tutor's ID: </div>
+            <div class="form-element"> <input type="number" name="tutor_id" required> </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-label"> Tutee's ID: </div>
+            <div class="form-element"> <input type="number" name="tutee_id" required> </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-label"> Time: </div>
+            <div class="form-element"> <input type="time" name="time" required> </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-label"> Submit: </div>
+            <div class="form-element"> <button type="submit">Submit</button> </div>
+        </div>
+    </form>
+
 {% endblock %}

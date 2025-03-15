@@ -1,7 +1,10 @@
- table {
-    border: 4px solid #262220 ;
-     padding: 4px ;
- }
+table {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #262220;
+
+}
+
 tr {
     border: 2px solid #262220;
     padding: 4px;

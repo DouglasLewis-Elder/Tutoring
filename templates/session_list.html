@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block pageheading %}Sessions{% endblock %}
+
+{% block main %}
+
+        <table>
+
+        <tr style="border: 4px">
+            <td>Tutor ID</td>
+            <td>Tutee ID</td>
+            <td>Time</td>
+        </tr>
+        {%  for sessions in session_list %}
+            <tr>
+                <td>{{ sessions[1], sessions[2] }}</td>
+                <td>{{ sessions[3], sessions[4] }}</td>
+                <td>{{ sessions[5] }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
