@@ -2,11 +2,13 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
 from sqlite3 import Error
-
+from flask_bcrypt import Bcrypt
 
 #database
 DATABASE = "tutor_db"
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
+app.secret_key = "KartikIsASillyGoose"
 def connect_to_database(db_file):
     try:
         con = sqlite3.connect(db_file)
@@ -88,17 +90,40 @@ def render_signup():
         if len(pass1) < 8: #password has to be over 8 characters
             return redirect('\signup?error=passwords+must+be+8+characters')
 
+        hashed_password = bcrypt.generate_password_hash(pass1)
+
         connection = connect_to_database(DATABASE) # insertying more data in
         query_insert = "INSERT INTO accounts (first_name, last_name, type, email, pass) VALUES (?,?,?,?,?)"
         cur = connection.cursor()
-        cur.execute(query_insert, (first_n, last_n, tutor_type, email, pass1))
+        cur.execute(query_insert, (first_n, last_n, tutor_type, email, hashed_password))
         connection.commit()
         connection.close()
-
+        return render_template('login.html')
     return render_template('signup.html')
 
 @app.route('/login', methods=['POST','GET'])
-def render_login():
+def render_login_page():
+    #collect info from login page
+    if request.method == 'POST':
+        email = request.form['user_email'].strip().lower()
+        password = request.form['user_password']
+
+        query = "SELECT * FROM accounts WHERE  email = ?"
+        con = connect_to_database(DATABASE)
+        cur = con.cursor()
+        cur.execute(query,(email,))
+        user_info = cur.fetchone()
+        print(user_info)
+        cur.close()
+        try:
+            account_id =  user_info[0]
+            first_name = user_info[1]
+            last_name = user_info[2]
+        except IndexError:
+            return redirect('/login?error=email+or+password+invalid')
+
+    #check info against DB info
+    #save the info to a session
     return render_template('login.html')
 
 if __name__ == '__main__':
