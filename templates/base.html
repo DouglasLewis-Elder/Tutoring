@@ -14,7 +14,11 @@
         <a href="/session_list"><button type="submit">Sessions</button></a>
         <a href="/session_creation"><button type="submit">Session Creation</button></a>
         <a href="/accounts"><button type="submit">Account</button></a>
-        <a href="/login"><button type="submit">Login & Signup</button></a>
+        {% if logged_in == True %}
+            <a href="/logout"><button type="submit">Logout</button></a>
+        {% else %}
+            <a href="/login"><button type="submit">Login & Signup</button></a>
+        {% endif %}
     </nav>
 <div class="container">
     <header>
