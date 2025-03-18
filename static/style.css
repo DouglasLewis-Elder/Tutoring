@@ -1,13 +1,28 @@
 table {
   width: 100%;
   height: 100%;
-  border: 2px solid #262220;
+  border: 3px solid #90AEAD;
+  background-color: #244855;
+  border-collapse:separate;
+  border-radius: 25px;
 
 }
+thead {
+    border: 25px;
+}
 
-tr {
-    border: 2px solid #262220;
+tbody {
+    boder: 25px;
+}
+
+td, th {
+    border-left: #90AEAD 3px;
+    border-top: #90AEAD 3px;
     padding: 4px;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
 }
 
  button {
@@ -24,16 +39,16 @@ tr {
 }
 
 button {
-      background-color: #c3a6a0;
+      background-color: #90AEAD;
   color: #262220;
-  border: 2px solid #A15c38;
+  border: 2px solid #90AEAD ;
   border-radius: 24px;
 }
 
 
 
 button:hover {
-  background-color: #A15c38;
+  background-color: #E64833;
   color: white;
   border-radius: 12px;
 }
@@ -46,7 +61,7 @@ button:hover {
 }
 
 body {
-    background-color: rgba(236, 240, 241, 1.0);
+    background-color: #FBE9D0;
 }
 
 .container {
@@ -80,13 +95,14 @@ h2 {
 }
 
 nav {
-    background-color: rgba(44, 62, 80, 1.0); /* darkest blue */
+    background-color: #244855; /* darkest blue */
     text-align: center;
     /*color: rgba(52, 152, 219, 1.0);!*light blue*!*/
     font-size: 1.5rem;
     padding-top: 0.4rem;
     padding-bottom: 0.7rem;
     color: rgba(52, 152, 219, 1.0); /*light blue*/
+    border-radius: 25px;
 }
 
 .navbar-brand {
@@ -100,25 +116,9 @@ nav {
 }
 
 nav a {
-    /*margin:0 0.5rem;*/
     padding: 0 0.5rem;
     font-size: 1.5rem;
 
-    /*border: 1px solid rgba(52, 152, 219, 1.0);*/
-    /*border-radius:0.5rem;*/
-}
-
-nav a:hover {
-    /*color: rgba(44, 62, 80, 1.0); !* darkest blue *!*/
-    /*background-color: rgba(52, 152, 219, 1.0); !*light blue*!*/
-    border-bottom: 3px solid rgba(52, 152, 219, 1.0);
-}
-
-a, a:visited {
-    color: rgba(52, 152, 219, 1.0);
-    /*color:hotpink;*/
-    text-decoration: none;
-}
 
 .product-box img {
     /*max-width:200px;*/
@@ -195,6 +195,7 @@ a, a:visited {
 .form-group input {
     padding: 0.3rem;
     width: 100%;
+    border-radius: 15px;
 }
 
 .cart-table > thead {

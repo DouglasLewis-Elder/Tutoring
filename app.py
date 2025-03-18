@@ -149,10 +149,8 @@ def render_login_page():
 
 @app.route('/logout', methods=['POST','GET'])
 def logout():
-    print(f'Session values before {session}')
     session.clear()
-    print(f'Session values after {session}')
-    return redirect('/?message+See+you+next+time')
+    return redirect('/login')
 
 if __name__ == '__main__':
     app.run()
