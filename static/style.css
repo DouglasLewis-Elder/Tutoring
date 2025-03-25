@@ -1,8 +1,28 @@
+form {
+    text-align: center;
+}
+
+input {
+    border: 3px solid #90AEAD;
+    background-color: #90AEAD;
+    border-radius: 15px;
+    width: 600px;
+    height: 30px;
+}
+
+input:focus {
+    border-radius: 1px;
+    transition: border-radius 0.6s;
+    background-color: #E64833;
+    border: 30px solid #90AEAD
+    outline: none;
+}
+
 table {
   width: 100%;
   height: 100%;
-  border: 3px solid #90AEAD;
-  background-color: #244855;
+  border: 3px solid #244855;
+  background-color: #90AEAD;
   border-collapse:separate;
   border-radius: 25px;
 
@@ -19,6 +39,7 @@ td, th {
     border-left: #90AEAD 3px;
     border-top: #90AEAD 3px;
     padding: 4px;
+    color: #244855;
 }
 
 td:first-child, th:first-child {
@@ -103,6 +124,8 @@ nav {
     padding-bottom: 0.7rem;
     color: rgba(52, 152, 219, 1.0); /*light blue*/
     border-radius: 25px;
+    width:1000px;
+    margin: 0 auto;
 }
 
 .navbar-brand {
@@ -186,6 +209,7 @@ nav a {
     width: 30%;
     float: left;
     padding: 0.3rem;
+    background-color: #244855;
 }
 
 .form-element {
@@ -195,7 +219,7 @@ nav a {
 .form-group input {
     padding: 0.3rem;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 300px;
 }
 
 .cart-table > thead {

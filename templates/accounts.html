@@ -3,6 +3,8 @@
 {% block pageheading %}Accounts{% endblock %}
 
 {% block main %}
+    <br>
+    <p> Here our greatest pride is our customours. Therefor, we make the full list of users available for anyone to see and use.</p>
     <h3> Login to your account: </h3>
     <a href="/login"><button type="submit">Login</button></a>
     <h3>Register a new account: </h3>
@@ -11,6 +13,7 @@
     <table>
         <thead>
             <tr style="border: 4px">
+                <th>ID</th>
                 <th>First</th>
                 <th>Last</th>
                 <th>Type</th>
@@ -19,6 +22,7 @@
         <tbody>
             {%  for accounts in account_list %}
                 <tr>
+                    <td>{{ accounts[0] }}</td>
                     <td>{{ accounts[1] }}</td>
                     <td>{{ accounts[2] }}</td>
                     <td>{% if accounts[3] == 0 %} Tutor {% else %} Tutee {% endif %}</td>

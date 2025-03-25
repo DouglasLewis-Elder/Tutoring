@@ -9,7 +9,6 @@ DATABASE = "tutor_db"
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.secret_key = "KartikIsASillyGoose"
-
 def is_logged_in():
     if (session.get('account_id') is None):
         print('Not logged in')
@@ -141,7 +140,6 @@ def render_login_page():
         session['email'] = email
         session['account_id'] = account_id
         session['first_name'] = first_name
-        print(session)
         return redirect('/')
     #check info against DB info
     #save the info to a session
