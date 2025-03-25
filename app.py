@@ -44,7 +44,7 @@ def render_sessions():
         connection.commit()
         connection.close()
 
-    return render_template('sessions.html')
+    return render_template('sessions.html', logged_in=is_logged_in())
 
 @app.route('/session_list')
 def render_session_list():
@@ -68,7 +68,7 @@ def render_session_list():
     cur.execute(query)
     session_list = cur.fetchall()
     connection.close()
-    return render_template('session_list.html', session_list=session_list)
+    return render_template('session_list.html', session_list=session_list, logged_in=is_logged_in())
 
 
 @app.route('/accounts') #Displays all the accounts
@@ -79,7 +79,7 @@ def render_accounts():
     cur.execute(query)
     account_list = cur.fetchall()
     connection.close()
-    return render_template('accounts.html', account_list=account_list)
+    return render_template('accounts.html', account_list=account_list, logged_in=is_logged_in(), session=session)
 
 @app.route('/signup', methods=['POST','GET'])
 def render_signup():

@@ -4,32 +4,40 @@
 
 {% block main %}
     <br>
-    <p> Here our greatest pride is our customours. Therefor, we make the full list of users available for anyone to see and use.</p>
-    <h3> Login to your account: </h3>
-    <a href="/login"><button type="submit">Login</button></a>
-    <h3>Register a new account: </h3>
-    <a href="/signup"><button type="submit">Signup</button></a>
+    {% if logged_in == True %}
+        <h3>Welcome, {{ session['first_name'] }}!</h3>
 
+
+    {% else %}
+        <h3> Login to your account: </h3>
+        <a href="/login"><button type="submit">Login</button></a>
+        <h3>Register a new account: </h3>
+        <a href="/signup"><button type="submit">Signup</button></a>
+    {% endif %}
+    <br><br>
+
+    <h3> These are all the available Tutors!</h3>
     <table>
         <thead>
             <tr style="border: 4px">
                 <th>ID</th>
                 <th>First</th>
                 <th>Last</th>
-                <th>Type</th>
             </tr>
         </thead>
         <tbody>
             {%  for accounts in account_list %}
+                {% if accounts[3] == 0 %}
                 <tr>
                     <td>{{ accounts[0] }}</td>
                     <td>{{ accounts[1] }}</td>
                     <td>{{ accounts[2] }}</td>
-                    <td>{% if accounts[3] == 0 %} Tutor {% else %} Tutee {% endif %}</td>
                 </tr>
+            {% endif %}
 
             {% endfor %}
         </tbody>
     </table>
+
 
 {% endblock %}
